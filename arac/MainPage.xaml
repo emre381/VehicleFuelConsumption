@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#F4F4F9"
+             x:Class="arac.MainPage">
+
+    <ScrollView>
+
+        <StackLayout Padding="20" Spacing="20">
+
+            <!-- Araç Markası Seçimi -->
+            <Frame Padding="10" Margin="0,5" BorderColor="#6200EE" CornerRadius="10" BackgroundColor="White">
+                <StackLayout>
+                    <Label Text="Araç Markası Seçin" TextColor="Black" FontSize="24" />
+                    <Picker x:Name="MarkaPicker" SelectedIndexChanged="MarkaPicker_SelectedIndexChanged" TextColor="#6200EE" BackgroundColor="#F0F0F0" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Araç Modeli Seçimi -->
+            <Frame Padding="10" Margin="0,5" BorderColor="#6200EE" CornerRadius="10" BackgroundColor="White">
+                <StackLayout>
+                    <Label Text="Araç Modeli Seçin" TextColor="Black" FontSize="24" />
+                    <Picker x:Name="ModelPicker"  SelectedIndexChanged="ModelPicker_SelectedIndexChanged" TextColor="#6200EE" BackgroundColor="#F0F0F0" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Araç Yılı Seçimi -->
+            <Frame Padding="10" Margin="0,5" BorderColor="#6200EE" CornerRadius="10" BackgroundColor="White">
+                <StackLayout>
+                    <Label Text="Araç Yılı Seçin" TextColor="Black" FontSize="24" />
+                    <Picker x:Name="YilPicker" BackgroundColor="#F0F0F0" TextColor="#6200EE" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Şehir İçi KM Girişi -->
+            <Frame Padding="10" Margin="0,5" BorderColor="#6200EE" CornerRadius="10" BackgroundColor="White">
+                <StackLayout>
+                    <Label Text="Şehir İçi Kaç KM Gidilecek?" TextColor="Black" FontSize="24" />
+                    <Entry x:Name="SehirIciEntry" Keyboard="Numeric" Placeholder="Örn: 50" BackgroundColor="#F0F0F0" TextColor="#6200EE"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Şehir Dışı KM Girişi -->
+            <Frame Padding="10" Margin="0,5" BorderColor="#6200EE" CornerRadius="10" BackgroundColor="White">
+                <StackLayout>
+                    <Label Text="Şehir Dışı Kaç KM Gidilecek?" TextColor="Black" FontSize="24" />
+                    <Entry x:Name="SehirDisiEntry" Keyboard="Numeric" Placeholder="Örn: 100" BackgroundColor="#F0F0F0" TextColor="#6200EE" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Hesapla Butonu -->
+            <Button Text="Hesapla"
+                    x:Name="Hesapla"
+                    Clicked="Hesapla_Clicked"
+                    BackgroundColor="#6200EE"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                     />
+
+            <!-- Şehir İçi Tüketim Sonucu -->
+            <Frame Padding="10" Margin="0,5" BorderColor="Green" CornerRadius="10" BackgroundColor="White">
+                <StackLayout>
+                    <Label Text="Şehir İçi Yakıt Tüketimi" FontAttributes="Bold" FontSize="Medium" TextColor="#2E7D32" />
+                    <Label x:Name="SehirIciSonucLabel" Text="0 Litre" TextColor="Green" FontSize="Medium" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Şehir Dışı Tüketim Sonucu -->
+            <Frame Padding="10" Margin="0,5" BorderColor="Blue" CornerRadius="10" BackgroundColor="White">
+                <StackLayout>
+                    <Label Text="Şehir Dışı Yakıt Tüketimi" FontAttributes="Bold" FontSize="Medium" TextColor="#1565C0" />
+                    <Label x:Name="SehirDisiSonucLabel" Text="0 Litre" TextColor="Blue" FontSize="Medium" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>
